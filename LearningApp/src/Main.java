@@ -45,26 +45,9 @@ public class Main {
         JPanel timePanel = new JPanel(new GridLayout(0, 2));
         learningConceptsTabbedPane.addTab("Hour", timePanel);
 
-        turkishLabel = new JLabel("", SwingConstants.CENTER);
-
-        addTranslationToMap("Mañana", "sabah");
-        addTranslationToMap("tarde", "öğleden sonra");
-        addTranslationToMap("noche", "gece");
-        addTranslationToMap("medianoche", "gece yarısı");
-        addTranslationToMap("amanecer", "şafak");
-        addTranslationToMap("oscuridad", "alacakaranlık");
-        addTranslationToMap("noche, tarde", "akşam");
-        addTranslationToMap("hora del día", "gündüz");
-
-        for (String spanishWord : translations.keySet()) {
-            JButton spanishButton = new JButton(spanishWord);
-            spanishButton.addActionListener(new TranslationActionListener(spanishWord));
-            timePanel.add(spanishButton);
-        }
-
-        timePanel.add(turkishLabel);
-
-        learningConceptsTabbedPane.addTab("Time", timePanel);
+        TimeWordList timeWordList = new TimeWordList();
+        timeWordList.initializeTimeWords();
+        learningConceptsTabbedPane.addTab("Time", timeWordList.getTimePanel());
 
         JPanel weatherPanel = new JPanel();
         weatherPanel.add(new JLabel("Learn the weather vocabulary in Turkish"));
@@ -76,10 +59,6 @@ public class Main {
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-    }
-
-    private static void addTranslationToMap(String spanish, String turkish) {
-        translations.put(spanish, turkish);
     }
 
     private static class TranslationActionListener implements ActionListener {
