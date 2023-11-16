@@ -53,12 +53,17 @@ public class Main {
         weatherPanel.add(new JLabel("Learn the weather vocabulary in Turkish"));
         learningConceptsTabbedPane.addTab("Weather", weatherPanel);
 
-        tabbedPane.addTab("Learning", learningConceptsTabbedPane);
+        NumbersWordList numbersWordList = new NumbersWordList();
+        numbersWordList.initializeNumberWords();
+        learningConceptsTabbedPane.addTab("Numbers", numbersWordList.getNumbersPanel());
 
         frame.add(tabbedPane, BorderLayout.CENTER);
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
+        tabbedPane.addTab("Learning", learningConceptsTabbedPane);
+        
     }
 
     private static class TranslationActionListener implements ActionListener {
