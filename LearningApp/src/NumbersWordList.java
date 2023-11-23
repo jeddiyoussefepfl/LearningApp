@@ -17,16 +17,39 @@ public class NumbersWordList {
     }
 
     public void initializeNumberWords() {
-        addTranslationToMap("one", "bir");
-        addTranslationToMap("two", "iki");
-        addTranslationToMap("three", "üç");
-        addTranslationToMap("four", "dört");
-        addTranslationToMap("five", "beş");
+    
 
-        for (String englishWord : translations.keySet()) {
-            JButton englishButton = new JButton(englishWord);
-            englishButton.addActionListener(new TranslationActionListener(englishWord));
-            numbersPanel.add(englishButton);
+        addTranslationToMap("cero", "sıfır");
+        addTranslationToMap("uno", "bir");
+        addTranslationToMap("dos", "iki");
+        addTranslationToMap("tres", "üç");
+        addTranslationToMap("cuatro", "dört");
+        addTranslationToMap("cinco", "beş");
+
+        addTranslationToMap("seis", "altı");
+        addTranslationToMap("siete", "yedi");
+        addTranslationToMap("ocho", "sekiz");
+        addTranslationToMap("nueve", "dokuz");
+        addTranslationToMap("on", "diez");
+
+        addTranslationToMap("veinte", "yirmi");
+        addTranslationToMap("treinta", "otuz");
+        addTranslationToMap("cuarenta", "kırk");
+        addTranslationToMap("cincuenta", "elli");
+        addTranslationToMap("sesenta", "altmış");
+        addTranslationToMap("setenta", "yetmiş");
+
+        addTranslationToMap("ochenta", "seksen");
+        addTranslationToMap("noventa", "doksan");
+        addTranslationToMap("cien", "yüz");
+        addTranslationToMap("mil", "bin");
+        addTranslationToMap("millón", "milyon");
+        addTranslationToMap("mil millones", "milyar");
+
+        for (String spanishWord : translations.keySet()) {
+            JButton spanishButton = new JButton(spanishWord);
+            spanishButton.addActionListener(new TranslationActionListener(spanishWord));
+            numbersPanel.add(spanishButton);
         }
 
         numbersPanel.add(turkishLabel);
@@ -36,20 +59,20 @@ public class NumbersWordList {
         return numbersPanel;
     }
 
-    private void addTranslationToMap(String english, String turkish) {
-        translations.put(english, turkish);
+    private void addTranslationToMap(String spanish, String turkish) {
+        translations.put(spanish, turkish);
     }
 
     private class TranslationActionListener implements ActionListener {
-        private final String englishWord;
+        private final String spanishWord;
 
-        public TranslationActionListener(String englishWord) {
-            this.englishWord = englishWord;
+        public TranslationActionListener(String spanishWord) {
+            this.spanishWord = spanishWord;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String turkishTranslation = translations.get(englishWord);
+            String turkishTranslation = translations.get(spanishWord);
             turkishLabel.setText(turkishTranslation);
         }
     }

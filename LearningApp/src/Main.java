@@ -38,10 +38,6 @@ public class Main {
         colorsPanel.add(new JLabel("Learn Turkish colors"));
         learningConceptsTabbedPane.addTab("Colors", colorsPanel);
 
-        JPanel numbersPanel = new JPanel();
-        numbersPanel.add(new JLabel("Learn Turkish numbers"));
-        learningConceptsTabbedPane.addTab("Numbers", numbersPanel);
-
         JPanel timePanel = new JPanel(new GridLayout(0, 2));
         learningConceptsTabbedPane.addTab("Hour", timePanel);
 
