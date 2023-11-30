@@ -1,50 +1,50 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.File;
 
-public class Main {
-    private final static Map<String, String> translations = new HashMap<>();
-    private static JLabel turkishLabel;
-
+public class TurkishLearningApp {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Learn Turkish");
+        JFrame frame = new JFrame("learn turkish");
         JTabbedPane tabbedPane = new JTabbedPane();
 
         JPanel listeningPanel = new JPanel();
-        listeningPanel.add(new JLabel("Listening exercises"));
+        listeningPanel.add(new JLabel("Listening exercices"));
         tabbedPane.addTab("Écoute", listeningPanel);
 
         JPanel writingPanel = new JPanel();
-        writingPanel.add(new JLabel("Writing exercises"));
+        writingPanel.add(new JLabel("writing exercices"));
         tabbedPane.addTab("Écriture", writingPanel);
 
         JPanel speakingPanel = new JPanel();
-        speakingPanel.add(new JLabel("Speaking exercises"));
+        speakingPanel.add(new JLabel("Speaking exercices"));
         tabbedPane.addTab("Expression Orale", speakingPanel);
 
         JPanel readingPanel = new JPanel();
-        readingPanel.add(new JLabel("Lecture exercises"));
+        readingPanel.add(new JLabel("Lecture exercices"));
         tabbedPane.addTab("Lecture", readingPanel);
 
         JTabbedPane learningConceptsTabbedPane = new JTabbedPane();
         JPanel alphabetPanel = new JPanel();
-        alphabetPanel.add(new JLabel("Learn Turkish alphabet"));
+        alphabetPanel.add(new JLabel("Learn turkish alphabet"));
         learningConceptsTabbedPane.addTab("Alphabet", alphabetPanel);
 
         JPanel colorsPanel = new JPanel();
-        colorsPanel.add(new JLabel("Learn Turkish colors"));
-        learningConceptsTabbedPane.addTab("Colors", colorsPanel);
+        colorsPanel.add(new JLabel(""));
+        ColorsWordList colorsWordList = new ColorsWordList();
+        colorsWordList.initializeColorsWords();
+        learningConceptsTabbedPane.addTab("Colors", colorsWordList.getColorsPanel());
 
-        TimeWordList timeWordList = new TimeWordList();
-        timeWordList.initializeTimeWords();
-        learningConceptsTabbedPane.addTab("Time", timeWordList.getTimePanel());
+        JPanel numbersPanel = new JPanel();
+        numbersPanel.add(new JLabel("learn turkish numbers"));
+        learningConceptsTabbedPane.addTab("Numbers", numbersPanel);
 
-        WeatherWordList weatherWordList = new WeatherWordList();
-        weatherWordList.initializeWeatherWords();
-        learningConceptsTabbedPane.addTab("Weather", weatherWordList.getWeatherPanel());
+        JPanel timePanel = new JPanel();
+        timePanel.add(new JLabel("learn the hour in turkish"));
+        learningConceptsTabbedPane.addTab("Hour", timePanel);
+
+        JPanel weatherPanel = new JPanel();
+        weatherPanel.add(new JLabel("learn the weather vocabulary in turkish"));
+        learningConceptsTabbedPane.addTab("Weather", weatherPanel);
 
         NumbersWordList numbersWordList = new NumbersWordList();
         numbersWordList.initializeNumberWords();
@@ -56,20 +56,12 @@ public class Main {
         frame.setVisible(true);
 
         tabbedPane.addTab("Learning", learningConceptsTabbedPane);
-        
-    }
 
-    private static class TranslationActionListener implements ActionListener {
-        private final String spanishWord;
+        tabbedPane.addTab("learning", learningConceptsTabbedPane);
 
-        public TranslationActionListener(String spanishWord) {
-            this.spanishWord = spanishWord;
-        }
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String turkishTranslation = translations.get(spanishWord);
-            turkishLabel.setText(turkishTranslation);
-        }
+
+
     }
 }
+
