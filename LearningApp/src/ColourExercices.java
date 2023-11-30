@@ -39,7 +39,7 @@ public class ColourExercices extends JPanel {
     }
 
     private void addExercise(String question, String optionA, String optionB, String optionC, String correctAnswer) {
-        JPanel exercisePanel = new JPanel(new GridLayout(5, 1));
+        JPanel exercisePanel = new JPanel(new GridLayout(6, 1));
         JLabel questionLabel = new JLabel(question);
         JRadioButton optionARadioButton = new JRadioButton(optionA);
         JRadioButton optionBRadioButton = new JRadioButton(optionB);
