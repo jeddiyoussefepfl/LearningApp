@@ -83,7 +83,7 @@ public class ColourExercices extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Turkish Numbers Exercise");
+        JFrame frame = new JFrame("Turkish Colour Exercise");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         ColourExercices colourExercise = new ColourExercices();
