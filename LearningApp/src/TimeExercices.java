@@ -83,7 +83,7 @@ public class TimeExercices extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Turkish Numbers Exercise");
+        JFrame frame = new JFrame("Turkish Time Exercise");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         TimeExercices timeExercise = new TimeExercices();
