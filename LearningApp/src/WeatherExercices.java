@@ -83,7 +83,7 @@ public class WeatherExercices extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Turkish Numbers Exercise");
+        JFrame frame = new JFrame("Turkish Weather Exercise");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         WeatherExercices weatherExercise = new WeatherExercices();
