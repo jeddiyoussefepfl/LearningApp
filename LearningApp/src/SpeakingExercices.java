@@ -39,35 +39,31 @@ public class SpeakingExercices extends JPanel {
     }
 
     private void addExercise(String question, String optionA, String optionB, String optionC, String correctAnswer) {
-        JPanel exercisePanel = new JPanel(new GridLayout(4, 1));
+        JPanel exercisePanel = new JPanel(new GridLayout(6, 1));
         JLabel questionLabel = new JLabel(question);
         JRadioButton optionARadioButton = new JRadioButton(optionA);
         JRadioButton optionBRadioButton = new JRadioButton(optionB);
         JRadioButton optionCRadioButton = new JRadioButton(optionC);
 
+        JLabel correctAnswerLabel = new JLabel("The correct answer is: " + correctAnswer);
+        correctAnswerLabel.setVisible(false);
+        
         JButton checkAnswerButton = new JButton("Check Answer");
 
         checkAnswerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                correctAnswerLabel.setVisible(true);
                 if (optionARadioButton.isSelected() && optionA.equals(correctAnswer)) {
                     optionARadioButton.setBackground(Color.GREEN);
-                    optionBRadioButton.setBackground(null);
-                    optionCRadioButton.setBackground(null);
-                } else if (optionBRadioButton.isSelected() && optionB.equals(correctAnswer)) {
-                    optionARadioButton.setBackground(null);
-                    optionBRadioButton.setBackground(Color.GREEN);
-                    optionCRadioButton.setBackground(null);
-                } else if (optionCRadioButton.isSelected() && optionC.equals(correctAnswer)) {
-                    optionARadioButton.setBackground(null);
-                    optionBRadioButton.setBackground(null);
-                    optionCRadioButton.setBackground(Color.GREEN);
-                } else {
-                    optionARadioButton.setBackground(optionA.equals(correctAnswer) ? Color.RED : null);
-                    optionBRadioButton.setBackground(optionB.equals(correctAnswer) ? Color.RED : null);
-                    optionCRadioButton.setBackground(optionC.equals(correctAnswer) ? Color.RED : null);
                 }
-            }
+                else if (optionBRadioButton.isSelected() && optionB.equals(correctAnswer)) {
+                    optionBRadioButton.setBackground(Color.GREEN);
+                }
+                else if (optionCRadioButton.isSelected() && optionC.equals(correctAnswer)) {
+                    optionCRadioButton.setBackground(Color.GREEN);
+                }
+            }    
         });
 
         ButtonGroup buttonGroup = new ButtonGroup();
@@ -79,6 +75,7 @@ public class SpeakingExercices extends JPanel {
         exercisePanel.add(optionARadioButton);
         exercisePanel.add(optionBRadioButton);
         exercisePanel.add(optionCRadioButton);
+        exercisePanel.add(correctAnswerLabel);
         exercisePanel.add(checkAnswerButton);
 
         add(exercisePanel);
