@@ -37,7 +37,7 @@ public class Main {
         JPanel colorsPanel = new JPanel();
         colorsPanel.add(new JLabel("Learn Turkish colors"));
         learningConceptsTabbedPane.addTab("Colors", colorsPanel);
-        
+
         TimeWordList timeWordList = new TimeWordList();
         timeWordList.initializeTimeWords();
         learningConceptsTabbedPane.addTab("Time", timeWordList.getTimePanel());
