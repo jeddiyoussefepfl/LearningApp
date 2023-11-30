@@ -3,39 +3,68 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ColourExercices extends JPanel {
-    public ColourExercices() {
+public class ColorsExercices extends JPanel {
+    public ColorsExercices() {
         setLayout(new GridLayout(5, 1));
 
-        addExercise("Question 1: ¿Cómo se dice amarilla en turco?",
-                "A. Kırmızı",
-                "B. Sarı",
-                "C. Beyaz",
-                "B. Sarı");
+        addExercise("Question 1: ¿Cuál es el color del cielo?",
+                "A. mavi",
+                "B. kırmızı",
+                "C. beyaz",
+                "A. mavi");
 
-        addExercise("Question 2: ¿Cómo se dice blanca en turco?",
-                "A. Beyaz",
-                "B. Gri",
-                "C. Siyah",
-                "A. Beyaz");
+        addExercise("Question 2: ¿Cuál es el color de la fresa?",
+                "A. gri",
+                "B. kırmızı",
+                "C. yeşil",
+                "B. kırmızı");
 
-        addExercise("Question 3: ¿Cómo se dice marrón en turco?",
-                "A. Turuncu",
-                "B. Kahverengi",
-                "C. Mor",
-                "B. Kahverengi");
+        addExercise("Question 3: ¿De qué color es la hierba?",
+                "A. turuncu",
+                "B. yeşil",
+                "C. pembe",
+                "B. yeşil");
 
-        addExercise("Question 4: ¿Cómo se dice rojo en turco?",
-                "A. Mavi",
-                "B. Pembe",
-                "C. Kırmızı",
-                "C. Kırmızı");
+        addExercise("Question 4: ¿De qué color es un plátano?",
+                "A. pembe",
+                "B. mavi",
+                "C. amarillo",
+                "C. amarillo");
 
-        addExercise("Question 5: ¿Cómo se dice naranja en turco?",
-                "A. Gri",
-                "B. Sarı",
-                "C. Turuncu",
-                "C. Turuncu");
+        addExercise("Question 5: ¿De qué color son las hojas en otoño?",
+                "A. kırmızı",
+                "B. turuncu",
+                "C. amarillo",
+                "B. turuncu");
+
+        addExercise("Question 5: ¿De qué color es la leche?",
+                "A. beyaz",
+                "B. gri",
+                "C. mor",
+                "A. beyaz");
+
+        addExercise("Question 5: ¿De qué color son las nubes cuando llueve?",
+                "A. amarillo",
+                "B. gri",
+                "C. kırmızı",
+                "B. gri");
+
+        addExercise("Question 5: ¿De qué color es el cielo por la noche?",
+                "A. mavi",
+                "B. pembe",
+                "C. siyah",
+                "C. siyah");
+
+        addExercise("Question 5: ¿De qué color son las flores de lavanda?",
+                "A. kırmızı",
+                "B. siyah",
+                "C. mor",
+                "C. mor");
+        addExercise("Question 5: ¿De qué color son los flamencos?",
+                "A. beyaz",
+                "B. pembe",
+                "C. turuncu",
+                "B. pembe");
     }
 
     private void addExercise(String question, String optionA, String optionB, String optionC, String correctAnswer) {
@@ -47,7 +76,7 @@ public class ColourExercices extends JPanel {
 
         JLabel correctAnswerLabel = new JLabel("The correct answer is: " + correctAnswer);
         correctAnswerLabel.setVisible(false);
-        
+
         JButton checkAnswerButton = new JButton("Check Answer");
 
         checkAnswerButton.addActionListener(new ActionListener() {
@@ -83,11 +112,11 @@ public class ColourExercices extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Turkish Colour Exercise");
+        JFrame frame = new JFrame("Turkish Colors Exercise");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        ColourExercices colourExercise = new ColourExercices();
-        frame.getContentPane().add(colourExercise, BorderLayout.CENTER);
+        ColorsExercices weatherExercise = new ColorsExercices();
+        frame.getContentPane().add(weatherExercise, BorderLayout.CENTER);
 
         frame.setSize(600, 400);
         frame.setVisible(true);
