@@ -16,7 +16,7 @@ public class WeatherWordList {
         translations = new HashMap<>();
     }
 
-    public void initializeTimeWords() {
+    public void initializeWeatherWords() {
         addTranslationToMap("soleado", "güneşli");
         addTranslationToMap("sol", "güneş");
         addTranslationToMap("lluvioso", "yağmurlu");

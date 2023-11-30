@@ -37,17 +37,14 @@ public class Main {
         JPanel colorsPanel = new JPanel();
         colorsPanel.add(new JLabel("Learn Turkish colors"));
         learningConceptsTabbedPane.addTab("Colors", colorsPanel);
-
-        JPanel timePanel = new JPanel(new GridLayout(0, 2));
-        learningConceptsTabbedPane.addTab("Hour", timePanel);
-
+        
         TimeWordList timeWordList = new TimeWordList();
         timeWordList.initializeTimeWords();
         learningConceptsTabbedPane.addTab("Time", timeWordList.getTimePanel());
 
-        JPanel weatherPanel = new JPanel();
-        weatherPanel.add(new JLabel("Learn the weather vocabulary in Turkish"));
-        learningConceptsTabbedPane.addTab("Weather", weatherPanel);
+        WeatherWordList weatherWordList = new WeatherWordList();
+        weatherWordList.initializeWeatherWords();
+        learningConceptsTabbedPane.addTab("Weather", weatherWordList.getWeatherPanel());
 
         NumbersWordList numbersWordList = new NumbersWordList();
         numbersWordList.initializeNumberWords();
