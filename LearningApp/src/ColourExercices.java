@@ -37,30 +37,30 @@ public class ColorsExercices extends JPanel {
                 "C. amarillo",
                 "B. turuncu");
 
-        addExercise("Question 5: ¿De qué color es la leche?",
+        addExercise("Question 6: ¿De qué color es la leche?",
                 "A. beyaz",
                 "B. gri",
                 "C. mor",
                 "A. beyaz");
 
-        addExercise("Question 5: ¿De qué color son las nubes cuando llueve?",
+        addExercise("Question 7: ¿De qué color son las nubes cuando llueve?",
                 "A. amarillo",
                 "B. gri",
                 "C. kırmızı",
                 "B. gri");
 
-        addExercise("Question 5: ¿De qué color es el cielo por la noche?",
+        addExercise("Question 8: ¿De qué color es el cielo por la noche?",
                 "A. mavi",
                 "B. pembe",
                 "C. siyah",
                 "C. siyah");
 
-        addExercise("Question 5: ¿De qué color son las flores de lavanda?",
+        addExercise("Question 9: ¿De qué color son las flores de lavanda?",
                 "A. kırmızı",
                 "B. siyah",
                 "C. mor",
                 "C. mor");
-        addExercise("Question 5: ¿De qué color son los flamencos?",
+        addExercise("Question 10: ¿De qué color son los flamencos?",
                 "A. beyaz",
                 "B. pembe",
                 "C. turuncu",
